@@ -214,7 +214,7 @@ hljs.initHighlightingOnLoad();
 <li><p>&#39;test/y_test.txt&#39;: Test labels.</p></li>
 </ul>
 
-<h3>The following files are available for the train and test data. Their descriptions are equivalent.</h3>
+<h4>The following files are available for the train and test data. Their descriptions are equivalent.</h4>
 
 <ul>
 <li><p>&#39;train/subject_train.txt&#39;: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. </p></li>
@@ -238,17 +238,23 @@ hljs.initHighlightingOnLoad();
 </ul></li>
 </ul>
 
-<h3>The tidy data set includes 180 (=30*6) observations of 30 subjects&#39; 6 activities.Each subject has 6 activities. Each activity has 66 features as following shows.</h3>
+<h2>The tidy data set includes 180 (=30*6) observations of 30 subjects&#39; 6 activities.</h2>
+
+<p>###Each subject has 6 activities.
+###Each activity has 66 features as following shows.</p>
 
 <ul>
 <li><p>Activity: factor with 6 levels, in order: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING, indicated the activity being performed at the moment of data gathering,</p></li>
 <li><p>SubjectID: numeric value from 1 to 30 indicating the subject Id.</p></li>
-<li><p>For variables 3 to 68 the variable is numeric and the name indicates:</p></li>
-<li><p>Acc and Gyro: data origin, accelerometer and gyroscope, respectively.</p></li>
-<li><p>-XYZ: the three dimensional axis, X,Y, or Z, respectively (3-axial)</p></li>
-<li><p>Body and Gravity: Acceleration signal source, Body or Gravity, determined using low pass Butter worth filter with a corner frequency of 0.3 Hz.</p></li>
-<li><p>Mean and Std: Mean value or Standard deviation, respectively.</p></li>
-<li><p>t of f: t denotes time domain signals, these were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butter worth filter with a corner frequency of 20 Hz to remove noise. On the other hand, f denotes the use of a Fast Fourier Transform (FFT) was applied.</p></li>
+<li><p>For variables 3 to 68 the variable is numeric and the name indicates:</p>
+
+<ul>
+<li>Acc and Gyro: data origin, accelerometer and gyroscope, respectively.</li>
+<li>-XYZ: the three dimensional axis, X,Y, or Z, respectively (3-axial)</li>
+<li>Body and Gravity: Acceleration signal source, Body or Gravity, determined using low pass Butter worth filter with a corner frequency of 0.3 Hz.</li>
+<li>Mean and Std: Mean value or Standard deviation, respectively.</li>
+<li>t of f: t denotes time domain signals, these were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butter worth filter with a corner frequency of 20 Hz to remove noise. On the other hand, f denotes the use of a Fast Fourier Transform (FFT) was applied.</li>
+</ul></li>
 </ul>
 
 <pre><code class="r">&quot;names(tidy_data)&quot; 
