@@ -32,7 +32,7 @@ features <- read.table("data/UCI HAR Dataset/features.txt", header=FALSE, as.is=
 str(features)
 
 
-# Reading data set and label the X. file variable (column) names
+# Reading data set and label the X. file variable (column) names. This takes time.
 X.test <- read.table("data/UCI HAR Dataset/test/X_test.txt", header=FALSE, sep="", col.names=features$Featire.Name)
 X.train <- read.table("data/UCI HAR Dataset/train/X_train.txt", header=FALSE, sep="", col.names=features$Featire.Name)
 str(X.train)
@@ -80,13 +80,21 @@ activity.labels$Activity.Name <- as.factor(activity.labels$Activity.Name)
 X.data$Activity <- factor(X.data$Activity, levels = 1:6, labels = activity.labels$Activity.Name)
 head(X.data)
 names(X.data)
-# shorten the variable name for easy reading; appropriately labels the data set with short name
+# Transform all the column name to readable name. Shorten the variable name for easy reading; appropriately labels the data set with readable name
 column.names <- colnames(X.data)
+# Get rid of the .
 column.names <- gsub("\\.+mean\\.+", column.names, replacement="Mean")
 column.names <- gsub("\\.+std\\.+", column.names, replacement="Std")
+# Give short name a full explaination
+column.names <- gsub("Mag", column.names, replacement="Magnitude")
+column.names <- gsub("Acc", column.names, replacement="Accelerometer")
+column.names <- gsub("Gyro", column.names, replacement="Gyroscope")
+column.names
+# Put back to X. file
 colnames(X.data) <- column.names
 
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject
+library(reshape2)
 meltdata <- melt(X.data, id.vars = c("Activity", "Subject.ID"))
 tidydata <- dcast(meltdata, Activity + Subject.ID ~ variable, mean)
 head(meltdata)
