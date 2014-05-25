@@ -49,22 +49,26 @@ For each record it is provided:
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-## For this project, we only use:
+## For this project, we only use these files:
 
-Training data set - 'train/X_train.txt'
-Test data set - 'test/X_test.txt'
-Training labels - 'train/y_train.txt'
-Test labels - 'test/y_test.txt'
-
+* Training data set - 'train/X_train.txt'
+* Test data set - 'test/X_test.txt'
+* Training labels - 'train/y_train.txt'
+* Test labels - 'test/y_test.txt'
 * Two files with row identifies the subject who performed the activity for each window sample in range from 1 to 30. 
-- 'train/subject_train.txt'
-- 'test/subject_test.txt'
+  - 'train/subject_train.txt'
+  - 'test/subject_test.txt'
+  
+
+
+
+### The tidy data set includes 180 (=30*6) observations of 30 subjects' 6 activities.Each subject has 6 activities. Each activity has 66 features as following shows.
 
 * Activity: factor with 6 levels, in order: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING, indicated the activity being performed at the moment of data gathering,
 
 * SubjectID: numeric value from 1 to 30 indicating the subject Id.
 
-### For variables 3 to 68 the variable is numeric and the name indicates:
+* For variables 3 to 68 the variable is numeric and the name indicates:
 
 * Acc and Gyro: data origin, accelerometer and gyroscope, respectively.
 * -XYZ: the three dimensional axis, X,Y, or Z, respectively (3-axial)
@@ -72,7 +76,7 @@ Test labels - 'test/y_test.txt'
 * Mean and Std: Mean value or Standard deviation, respectively.
 * t of f: t denotes time domain signals, these were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butter worth filter with a corner frequency of 20 Hz to remove noise. On the other hand, f denotes the use of a Fast Fourier Transform (FFT) was applied.
 
-* The tidy data set includes 180 (=30*6) observations of 30 subjects' 6 activities.Each subject has 6 activities. Each activity has 66 features as following shows.
+
 
 ```r
 "names(tidy_data)" 
